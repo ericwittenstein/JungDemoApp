@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const { User } = require("../models");
 
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const UserInfo = await User.findByPk(req.params.id);
+    const UserInfo = await User.findByPk(1);
 
     // TO convert my Sequelize object into a useable object
     const serializedUserData = UserInfo.get({ plain: true });
